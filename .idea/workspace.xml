@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="da77a13c-3163-4876-822d-658e3cb41229" name="Changes" comment="idk i just try to run auth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/library.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/java/com/example/libraryserver/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryServer/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,30 +48,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Batch.gradlew.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Shell Script.gradlew.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Batch.gradlew.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Shell Script.gradlew.executor": "Run",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/DDS/IdeaProjects/semester-work-assignment-tuesday-15-00-17-50-team-kj14/LibraryServer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="fx" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="fx" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="fx" />
       <method v="2">
@@ -81,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -97,6 +123,9 @@
       <workItem from="1730481536360" duration="3981000" />
       <workItem from="1730560447869" duration="379000" />
       <workItem from="1730682355544" duration="1440000" />
+      <workItem from="1730753357205" duration="649000" />
+      <workItem from="1731276148380" duration="397000" />
+      <workItem from="1732562802529" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="    create folders for understand">
       <option name="closed" value="true" />

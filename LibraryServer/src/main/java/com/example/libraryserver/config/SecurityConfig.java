@@ -63,12 +63,12 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/register").permitAll()
+                        .requestMatchers("/login","/api/users/register","/public/**").permitAll()
                         .requestMatchers("/api/books/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated()
                 )
-                .formLogin(withDefaults()) // Use form login instead of httpBasic
-                .logout(logout -> logout.permitAll());
+                .formLogin(withDefaults()); // Use form login instead of httpBasic
+
 
         return http.build();
     }

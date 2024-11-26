@@ -32,7 +32,7 @@ public class User implements UserDetails {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;
+    private Role role; // Для одной роли
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -48,6 +48,7 @@ public class User implements UserDetails {
     public String getUsername() {
         return username;
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -68,3 +69,4 @@ public class User implements UserDetails {
         return true;
     }
 }
+
