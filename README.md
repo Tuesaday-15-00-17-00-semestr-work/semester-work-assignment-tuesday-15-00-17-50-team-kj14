@@ -132,4 +132,4 @@ If you would like to contribute to this project, please feel free to submit a pu
 
 ## License
 
-This project is licensed under the [Your License Name] License - see the `LICENSE` file for details.
+This project is licensed under the [KJ14] License - see the `LICENSE` file for details.
