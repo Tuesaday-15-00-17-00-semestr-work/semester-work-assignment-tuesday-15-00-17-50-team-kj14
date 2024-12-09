@@ -130,3 +130,6 @@ This project is a web application for managing a simple library system. It allow
 
 If you would like to contribute to this project, please feel free to submit a pull request or open an issue.
 
+## License
+
+This project is licensed under the [Your License Name] License - see the `LICENSE` file for details.
