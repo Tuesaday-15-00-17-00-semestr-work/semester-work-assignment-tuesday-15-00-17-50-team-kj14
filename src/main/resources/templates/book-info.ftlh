@@ -18,7 +18,7 @@
 <#if user.isAdmin()>
     <h3> Delete book</h3>
     <form action="/books/delete/${book.id}" method="post">
-        <input type="submit" value="Delete book"/>;
+        <input type="submit" value="Delete book"/>
     </form>
 </#if>
 <br>

@@ -7,12 +7,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -61,16 +59,34 @@ public class UserService {
     }
 
 
-    public void changeUserRoles(User user, Map<String, String> form) {
-        Set<String> roles = Arrays.stream(Role.values())
-                .map(Role::name)
-                .collect(Collectors.toSet());
+    public void changeUserRoles(User user, String role) {
+
+
         user.getRoles().clear();
-        for (String key : form.keySet()) {
-            if (roles.contains(key)) {
-                user.getRoles().add(Role.valueOf(key));
-            }
+        user.getRoles().add(Role.valueOf(role));
+        userRepository.save(user);
+    }
+    public void changePassword(User user,String NewPassword) {
+        if(NewPassword.isEmpty()  || user.getPassword().equals(passwordEncoder.encode(NewPassword))) {
+            return;
         }
+        user.setPassword(passwordEncoder.encode(NewPassword));
+        userRepository.save(user);
+    }
+
+    public void changeEmail(User user, String newEmail) {
+        if(newEmail.isEmpty() || userRepository.findByEmail(newEmail) != null || user.getEmail().equals(newEmail)) {
+            return;
+        }
+        user.setEmail(newEmail);
+        userRepository.save(user);
+    }
+
+    public  void changeUsername(User user, String newUsername) {
+        if(newUsername.isEmpty() || user.getUsername().equals(newUsername)) {
+            return;
+        }
+        user.setName(newUsername);
         userRepository.save(user);
     }
 }
