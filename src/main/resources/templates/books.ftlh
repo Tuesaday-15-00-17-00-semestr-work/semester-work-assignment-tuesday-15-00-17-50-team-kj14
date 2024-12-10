@@ -23,11 +23,11 @@
     <input type="submit" value="Search"/>
 </form>
 <#list books as book>
-    <div>
-        <p><b>${book.title}</b> ${book.author} | <a href="/books/${book.id}">More... </a></p>
-    </div>
-    <#else>
-    <h3> No book </h3>
+    <#if book.available_copies?? && book.available_copies != 0>
+        <div>
+            <p><b>${book.title}</b> ${book.author} | <a href="/books/${book.id}">More... </a></p>
+        </div>
+    </#if>
 </#list>
 <#if user.email??>
     <hr>

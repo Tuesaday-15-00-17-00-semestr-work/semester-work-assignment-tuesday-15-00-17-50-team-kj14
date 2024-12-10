@@ -14,6 +14,9 @@ import java.util.List;
 public class BookService {
     private final BookRepository bookRepository;
     private final TransactionService transactionService;
+
+
+
     public  List<Book> listBooks(String title) {
         if(title != null && !title.isEmpty()) {
             return bookRepository.findByTitle(title);
@@ -45,7 +48,12 @@ public class BookService {
         return bookRepository.findById(id).orElse(null);
     }
 
+    public void setBookAvailableCopies(Long id, Integer copies) {
+        Book book = getBookByID(id);
+        book.setAvailable_copies(copies);
+        bookRepository.save(book);
 
+    }
     public Book takeBook(long id) {
         Book book = getBookByID(id);
         if(book != null && book.getAvailable_copies() > 0) {

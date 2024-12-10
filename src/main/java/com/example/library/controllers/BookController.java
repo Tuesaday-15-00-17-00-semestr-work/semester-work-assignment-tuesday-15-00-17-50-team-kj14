@@ -4,6 +4,7 @@ package com.example.library.controllers;
 import com.example.library.models.Book;
 import com.example.library.models.enums.ActionType;
 import com.example.library.repositories.BookRepository;
+import com.example.library.repositories.TransactionRepository;
 import com.example.library.repositories.UserRepository;
 import com.example.library.services.BookService;
 import com.example.library.services.TransactionService;
@@ -26,6 +27,7 @@ public class BookController {
     private final UserService userService;
     private final TransactionService transactionService;
     private final UserRepository userRepository;
+    private final TransactionRepository transactionRepository;
 
     @GetMapping("/")
     public String books(@RequestParam(name = "title",required = false) String title, Principal principal, Model model) {
@@ -46,6 +48,9 @@ public class BookController {
                              @RequestParam String author,
                              @RequestParam String isbn,Principal principal) {
 
+        title = title.trim();
+        author = author.trim();
+        isbn= isbn.trim();
 
         Book book = bookService.addBook(new Book(null, title, author, isbn,1));
         transactionService.actionBook(userService.getUserByPrincipal(principal).getId(),book.getId(), ActionType.ADD);
@@ -62,8 +67,8 @@ public class BookController {
     }
     @PostMapping("/books/delete/{id}")
     public String deleteBook(@PathVariable Long id, Principal principal, Model model) {
-        bookService.deleteBook(id);
-     //   transactionService.actionBook(userService.getUserByPrincipal(principal).getId(),id, ActionType.DELETE);
+        bookService.setBookAvailableCopies(id,0);
+        transactionService.actionBook(userService.getUserByPrincipal(principal).getId(),id, ActionType.DELETE);
         return "redirect:/";
     }
 }

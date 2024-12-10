@@ -28,5 +28,8 @@ public class TransactionService {
         transaction.setActionType(actionType);
         transactionRepository.save(transaction);
     }
+    public void deleteAllActionByBookId(Long bookId) {
+        transactionRepository.deleteAllByBookId(bookId);
 
+    }
 }

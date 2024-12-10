@@ -2,6 +2,7 @@ package com.example.library.controllers;
 
 import com.example.library.models.User;
 import com.example.library.models.enums.Role;
+import com.example.library.repositories.UserRepository;
 import com.example.library.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,6 +20,7 @@ import java.util.Map;
 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class AdminController {
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @GetMapping("/admin")
     public String admin(Model model) {
@@ -40,8 +42,15 @@ public class AdminController {
     }
 
     @PostMapping("/admin/user/edit")
-    public String userEdit(@RequestParam("userId") User user, @RequestParam Map<String, String> form) {
-        userService.changeUserRoles(user, form);
+    public String userEdit(@RequestParam("userId") User user, @RequestParam("role") String role, Model model,
+                           @RequestParam String email,
+                           @RequestParam String password,
+                           @RequestParam String username) {
+
+        userService.changeUserRoles(user, role);
+        userService.changeEmail(user, email);
+        userService.changePassword(user, password);
+        userService.changeUsername(user, username);
         return "redirect:/admin";
     }
 }
